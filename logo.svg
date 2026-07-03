@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <!-- Style pour une gestion propre des couleurs -->
+  <style>
+    .bg { fill: #131b26; }
+    .gold { fill: #c5923c; }
+    .gold-stroke { stroke: #c5923c; fill: none; stroke-width: 3; stroke-linecap: round; }
+    .forest-green { fill: #245137; }
+    .sage-green { fill: #4d7a5b; }
+    .dark-red { fill: #852233; }
+    .accent-cream { fill: #dfcb9b; }
+  </style>
+
+  <!-- Fond Dark Noble -->
+  <rect class="bg" width="800" height="500" />
+
+  <!-- Groupe principal centré -->
+  <g id="moth" transform="translate(0, 20)">
+    
+    <!-- ÉLÉMENTS SYMÉTRIQUES (AILES ET FEUILLAGES) -->
+    <!-- Aile Gauche -->
+    <g id="left-side">
+      <!-- Petite feuille décorative fond gauche -->
+      <path d="M 220,380 C 180,390 170,350 200,340 C 230,330 230,370 220,380 Z" class="gold" opacity="0.7"/>
+      <path d="M 180,240 C 150,230 160,200 180,200 C 200,200 200,230 180,240 Z" class="gold" opacity="0.6"/>
+      
+      <!-- Aile inférieure gauche -->
+      <path d="M 390,260 C 320,260 270,350 330,420 C 370,460 395,410 395,330 Z" class="forest-green" />
+      <path d="M 380,280 C 330,290 300,360 340,400 C 365,420 380,390 380,330 Z" class="sage-green" />
+      <!-- Lune/Détail aile inf. -->
+      <circle cx="350" cy="340" r="15" class="dark-red" />
+      <path d="M 355,330 A 12,12 0 1,0 355,350 A 15,15 0 0,1 355,330 Z" class="accent-cream" />
+
+      <!-- Aile supérieure gauche -->
+      <path d="M 390,230 C 310,180 180,160 150,210 C 120,260 220,350 330,300 C 370,280 390,250 390,230 Z" class="forest-green" />
+      <path d="M 370,225 C 310,190 200,185 180,220 C 160,255 230,320 320,285 C 350,270 370,245 370,225 Z" class="sage-green" />
+      
+      <!-- Motifs géométriques aile sup gauche -->
+      <path d="M 200,220 Q 260,200 350,230" class="gold-stroke" />
+      <path d="M 220,245 Q 270,225 340,245" class="gold-stroke" stroke-dasharray="1 8" stroke-width="5" />
+      <circle cx="280" cy="210" r="18" class="dark-red" />
+      <path d="M 286,198 A 14,14 0 1,0 286,222 A 18,18 0 0,1 286,198 Z" class="accent-cream" />
+      
+      <!-- Bordure d'aile dorée -->
+      <path d="M 150,210 C 135,235 170,270 210,295" class="gold-stroke" stroke-width="4" />
+    </g>
+
+    <!-- Aile Droite (Effet Miroir automatique de l'aile gauche) -->
+    <use href="#left-side" transform="translate(800, 0) scale(-1, 1)" />
+
+    <!-- CORPS DU PAPILLON (Centré à X=400) -->
+    <!-- Antennes -->
+    <g id="antennae">
+      <!-- Antenne Gauche -->
+      <path d="M 400,140 Q 370,110 345,90" class="gold-stroke" stroke-width="4" />
+      <path d="M 390,133 L 375,128 M 380,123 L 365,118 M 370,113 L 355,108 M 360,103 L 345,98 M 350,93 L 340,90" class="gold-stroke" stroke-width="2" />
+      <!-- Antenne Droite -->
+      <path d="M 400,140 Q 430,110 455,90" class="gold-stroke" stroke-width="4" />
+      <path d="M 410,133 L 425,128 M 420,123 L 435,118 M 430,113 L 445,108 M 440,103 L 455,98 M 450,93 L 460,90" class="gold-stroke" stroke-width="2" />
+    </g>
+
+    <!-- Corps / Abdomen -->
+    <g id="body">
+      <!-- Thorax (Haut) -->
+      <ellipse cx="400" cy="155" rx="18" ry="22" class="forest-green" />
+      <ellipse cx="400" cy="150" rx="12" ry="15" class="sage-green" />
+      <circle cx="400" cy="140" r="8" class="gold" />
+
+      <!-- Abdomen (Bas) -->
+      <path d="M 385,175 C 385,175 375,260 400,320 C 425,260 415,175 415,175 Z" class="gold" />
+      <!-- Rayures de l'abdomen -->
+      <path d="M 381,200 Q 400,210 419,200" class="gold-stroke" stroke-width="5" />
+      <path d="M 378,225 Q 400,235 422,225" class="gold-stroke" stroke-width="5" />
+      <path d="M 376,250 Q 400,260 424,250" class="gold-stroke" stroke-width="5" />
+      <path d="M 378,275 Q 400,285 422,275" class="gold-stroke" stroke-width="5" />
+      
+      <!-- Ligne de crête centrale -->
+      <path d="M 400,175 L 400,305" stroke="#245137" stroke-width="3" stroke-linecap: "round" />
+    </g>
+
+    <!-- Éléments de poussière/étoiles décoratives au centre -->
+    <circle cx="400" cy="70" r="4" class="accent-cream" />
+    <circle cx="400" cy="350" r="5" class="gold" />
+    <circle cx="400" cy="380" r="3" class="accent-cream" />
+  </g>
+</svg>
